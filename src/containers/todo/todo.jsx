@@ -37,10 +37,8 @@ class ToDo extends Component {
     switch (activeFilter) {
       case 'completed':
         return tasks.filter(task => task.isCompleted);
-        break;
       case 'active':
         return tasks.filter(task => !task.isCompleted);
-        break;
       default:
         return tasks;
     }
@@ -69,16 +67,3 @@ export default connect(({ tasks, filters }) => ({
   tasks,
   filters,
 }), { addTast, removeTask, completeTask, changeFilter })(ToDo);
-
-
-
-
-
-
-
-
-
-
-
-
-//
