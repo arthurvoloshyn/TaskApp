@@ -38,7 +38,7 @@ export default function register() {
         // service worker/PWA documentation.
         navigator.serviceWorker.ready.then(() => {
           /* eslint-disable no-console */
-          console.log('This web app is being served cache-first by a service ' + 'worker. To learn more, visit https://goo.gl/SC7cgQ');
+          console.log('This web app is being served cache-first by a service worker. To learn more, visit https://goo.gl/SC7cgQ');
           /* eslint-enable */
         });
       } else {
