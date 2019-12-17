@@ -4,7 +4,7 @@
     "git add"
   ],
   "**/*.+(js|jsx|ts|tsx)": [
-    "eslint --fix --max-warnings=0 --no-ignore",
+    "eslint --fix --max-warnings=0",
     "git add"
   ],
   "**/*.+(css|scss|sass|less)": [
