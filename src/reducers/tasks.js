@@ -5,32 +5,33 @@ let TASKS = load({ namespace: 'todo-list' });
 
 if (!TASKS || !TASKS.tasks || !TASKS.tasks.length) {
   TASKS = {
-    tasks: [],
-  }
+    tasks: []
+  };
 }
 
 const tasks = (state = TASKS.tasks, { id, text, isCompleted, type }) => {
   switch (type) {
-    case ADD_TASK :
+    case ADD_TASK:
       return [
-        ...state, {
+        ...state,
+        {
           id,
           text,
-          isCompleted,
+          isCompleted
         }
       ];
     case REMOVE_TASK:
-        return [...state].filter(task => task.id !== id);
-      case COMPLETE_TASK:
-          return [...state].map(task => {
-            if(task.id === id) {
-              task.isCompleted = !task.isCompleted;
-            }
-            return task;
-          });
+      return [...state].filter(task => task.id !== id);
+    case COMPLETE_TASK:
+      return [...state].map(task => {
+        if (task.id === id) {
+          task.isCompleted = !task.isCompleted;
+        }
+        return task;
+      });
     default:
       return state;
   }
-}
+};
 
 export default tasks;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { addTast, removeTask, completeTask, changeFilter } from '../../actions/actionCreator';
 
@@ -10,41 +11,40 @@ import Footer from '../../components/footer/footer';
 import './todo.css';
 
 class ToDo extends Component {
-
   state = {
-    taskText: '',
-  }
+    taskText: ''
+  };
 
   handleInputChange = ({ target: { value } }) => {
     this.setState({
-      taskText: value,
-    })
-  }
+      taskText: value
+    });
+  };
 
   addTast = ({ key }) => {
     const { taskText } = this.state;
 
     if (taskText.length > 3 && key === 'Enter') {
       const { addTast } = this.props;
-      addTast((new Date()).getTime(), taskText, false);
+      addTast(new Date().getTime(), taskText, false);
       this.setState({
-        taskText: '',
+        taskText: ''
       });
     }
-  }
+  };
 
   filterTasks = (tasks, activeFilter) => {
     switch (activeFilter) {
       case 'completed':
-        return tasks.filter(task => task.isCompleted);
+        return tasks.filter(({ isCompleted }) => isCompleted);
       case 'active':
-        return tasks.filter(task => !task.isCompleted);
+        return tasks.filter(({ isCompleted }) => !isCompleted);
       default:
         return tasks;
     }
-  }
+  };
 
-  getActiveTasksCounter = tasks => tasks.filter(task => !task.isCompleted).length;
+  getActiveTasksCounter = tasks => tasks.filter(({ isCompleted }) => !isCompleted).length;
 
   render() {
     const { taskText } = this.state;
@@ -63,7 +63,28 @@ class ToDo extends Component {
   }
 }
 
-export default connect(({ tasks, filters }) => ({
-  tasks,
-  filters,
-}), { addTast, removeTask, completeTask, changeFilter })(ToDo);
+ToDo.propTypes = {
+  changeFilter: PropTypes.func,
+  tasks: PropTypes.array,
+  removeTask: PropTypes.func,
+  filters: PropTypes.string,
+  completeTask: PropTypes.func,
+  addTast: PropTypes.func
+};
+
+ToDo.defaultProps = {
+  changeFilter: () => {},
+  tasks: [],
+  removeTask: () => {},
+  filters: 'all',
+  completeTask: () => {},
+  addTast: () => {}
+};
+
+export default connect(
+  ({ tasks, filters }) => ({
+    tasks,
+    filters
+  }),
+  { addTast, removeTask, completeTask, changeFilter }
+)(ToDo);

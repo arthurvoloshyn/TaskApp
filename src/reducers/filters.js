@@ -5,8 +5,8 @@ let BASE_FILTER = load({ namespace: 'todo-list' });
 
 if (!BASE_FILTER || !BASE_FILTER.filters || !BASE_FILTER.filters.length) {
   BASE_FILTER = {
-    filters: 'all',
-  }
+    filters: 'all'
+  };
 }
 
 const filter = (state = BASE_FILTER.filters, { type, activeFilter }) => {
@@ -16,6 +16,6 @@ const filter = (state = BASE_FILTER.filters, { type, activeFilter }) => {
     default:
       return state;
   }
-}
+};
 
 export default filter;

@@ -16,13 +16,13 @@ const ToDoList = ({ tasksList, removeTask, completeTask }) => (
 ToDoList.propTypes = {
   tasksList: PropTypes.array,
   removeTask: PropTypes.func,
-  completeTask: PropTypes.func,
-}
+  completeTask: PropTypes.func
+};
 
 ToDoList.defaultProps = {
   tasksList: [],
   removeTask: () => {},
-  completeTask: () => {},
-}
+  completeTask: () => {}
+};
 
 export default ToDoList;

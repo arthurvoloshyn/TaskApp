@@ -6,11 +6,11 @@ import './footer.css';
 const FILTERS_BTN = [
   {
     text: 'All',
-    id: 'all',
+    id: 'all'
   },
   {
     text: 'Active',
-    id: 'active',
+    id: 'active'
   },
   {
     text: 'Completed',
@@ -24,10 +24,14 @@ const Footer = ({ amount, activeFilter, changeFilter }) => (
     <div className="btn-group">
       {FILTERS_BTN.map(({ text, id }) => (
         <button
-          onClick={() => {changeFilter(id)}}
+          onClick={() => {
+            changeFilter(id);
+          }}
           key={id}
-          className={id === activeFilter ? "filter-btn active" : 'filter-btn'}
-        >{text}</button>
+          className={id === activeFilter ? 'filter-btn active' : 'filter-btn'}
+        >
+          {text}
+        </button>
       ))}
     </div>
   </div>
@@ -36,13 +40,13 @@ const Footer = ({ amount, activeFilter, changeFilter }) => (
 Footer.propTypes = {
   amount: PropTypes.number,
   activeFilter: PropTypes.string,
-  changeFilter: PropTypes.func,
-}
+  changeFilter: PropTypes.func
+};
 
 Footer.defaultProps = {
   changeFilter: () => {},
   amount: 0,
-  activeFilter: 'all',
-}
+  activeFilter: 'all'
+};
 
 export default Footer;

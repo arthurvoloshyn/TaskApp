@@ -16,13 +16,15 @@ ToDoItem.propTypes = {
   isCompleted: PropTypes.bool,
   removeTask: PropTypes.func,
   id: PropTypes.number,
-}
+  completeTask: PropTypes.func
+};
 
 ToDoItem.defaultProps = {
   text: '',
   isCompleted: false,
   removeTask: () => {},
   id: 0,
-}
+  completeTask: () => {}
+};
 
 export default ToDoItem;

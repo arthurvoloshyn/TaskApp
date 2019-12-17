@@ -19,5 +19,5 @@ export const completeTask = id => ({
 
 export const changeFilter = activeFilter => ({
   type: CHANGE_FILTER,
-  activeFilter,
-})
+  activeFilter
+});
