@@ -38,7 +38,7 @@
     "selector-max-specificity": ["1,6,4"],
     "selector-no-qualifying-type": null,
     "selector-pseudo-element-colon-notation": "single",
-    "string-quotes": "double",
+    "string-quotes": "single",
     "unit-blacklist": null,
 
     "order/order": [
