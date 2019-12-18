@@ -1,5 +1,6 @@
-import { CHANGE_FILTER } from '../constants';
 import { load } from 'redux-localstorage-simple';
+
+import { CHANGE_FILTER } from '../constants';
 
 let BASE_FILTER = load({ namespace: 'todo-list' });
 
