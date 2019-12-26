@@ -1,13 +1,18 @@
 import React, { Fragment } from 'react';
+import { Provider } from 'react-redux';
+
+import store from './store';
 
 import ToDo from './containers/todo/todo';
 import Title from './components/title/title';
 
 const App = () => (
-  <Fragment>
-    <Title title="Task List" />
-    <ToDo />
-  </Fragment>
+  <Provider store={store}>
+    <Fragment>
+      <Title title="Task List" />
+      <ToDo />
+    </Fragment>
+  </Provider>
 );
 
 export default App;
