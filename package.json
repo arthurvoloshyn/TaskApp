@@ -1,6 +1,6 @@
 {
-  "homepage": "https://ArturW1998.github.io/TaskList",
-  "name": "TaskList",
+  "homepage": "https://ArturW1998.github.io/TaskApp",
+  "name": "TaskApp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

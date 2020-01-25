@@ -9,7 +9,7 @@ import Title from './components/title/title';
 const App = () => (
   <Provider store={store}>
     <Fragment>
-      <Title title="Task List" />
+      <Title title="Task App" />
       <ToDo />
     </Fragment>
   </Provider>
