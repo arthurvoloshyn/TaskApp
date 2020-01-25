@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/TaskApp/static/css/main.a67f9e07.chunk.css"
   },
   {
-    "revision": "173f321dd94420c2701e13f82369653d",
+    "revision": "8fa3e71c412253fe3ebacb7c2900b764",
     "url": "/TaskApp/index.html"
   }
 ];
