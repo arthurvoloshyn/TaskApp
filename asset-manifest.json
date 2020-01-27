@@ -1,13 +1,13 @@
 {
-  "main.css": "/TaskApp/static/css/main.8d019898.chunk.css",
-  "main.js": "/TaskApp/static/js/main.b4c96583.chunk.js",
-  "main.js.map": "/TaskApp/static/js/main.b4c96583.chunk.js.map",
-  "runtime~main.js": "/TaskApp/static/js/runtime~main.1330a51e.js",
-  "runtime~main.js.map": "/TaskApp/static/js/runtime~main.1330a51e.js.map",
-  "static/js/2.860bbd73.chunk.js": "/TaskApp/static/js/2.860bbd73.chunk.js",
-  "static/js/2.860bbd73.chunk.js.map": "/TaskApp/static/js/2.860bbd73.chunk.js.map",
-  "index.html": "/TaskApp/index.html",
-  "precache-manifest.9b8d33109b7aefb3502bd5ea3db66abd.js": "/TaskApp/precache-manifest.9b8d33109b7aefb3502bd5ea3db66abd.js",
-  "service-worker.js": "/TaskApp/service-worker.js",
-  "static/css/main.8d019898.chunk.css.map": "/TaskApp/static/css/main.8d019898.chunk.css.map"
+  "main.css": "/TaskList/static/css/main.f1af4d28.chunk.css",
+  "main.js": "/TaskList/static/js/main.bda0d609.chunk.js",
+  "main.js.map": "/TaskList/static/js/main.bda0d609.chunk.js.map",
+  "runtime~main.js": "/TaskList/static/js/runtime~main.dbe56399.js",
+  "runtime~main.js.map": "/TaskList/static/js/runtime~main.dbe56399.js.map",
+  "static/js/2.345f8e30.chunk.js": "/TaskList/static/js/2.345f8e30.chunk.js",
+  "static/js/2.345f8e30.chunk.js.map": "/TaskList/static/js/2.345f8e30.chunk.js.map",
+  "index.html": "/TaskList/index.html",
+  "precache-manifest.1964c889afe6020dff1fa99449f2c717.js": "/TaskList/precache-manifest.1964c889afe6020dff1fa99449f2c717.js",
+  "service-worker.js": "/TaskList/service-worker.js",
+  "static/css/main.f1af4d28.chunk.css.map": "/TaskList/static/css/main.f1af4d28.chunk.css.map"
 }
