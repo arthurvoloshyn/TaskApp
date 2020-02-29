@@ -1,13 +1,13 @@
 {
   "main.css": "/TaskApp/static/css/main.a07cf1bc.chunk.css",
-  "main.js": "/TaskApp/static/js/main.cbdaccda.chunk.js",
-  "main.js.map": "/TaskApp/static/js/main.cbdaccda.chunk.js.map",
+  "main.js": "/TaskApp/static/js/main.efaabab4.chunk.js",
+  "main.js.map": "/TaskApp/static/js/main.efaabab4.chunk.js.map",
   "runtime~main.js": "/TaskApp/static/js/runtime~main.1330a51e.js",
   "runtime~main.js.map": "/TaskApp/static/js/runtime~main.1330a51e.js.map",
   "static/js/2.860bbd73.chunk.js": "/TaskApp/static/js/2.860bbd73.chunk.js",
   "static/js/2.860bbd73.chunk.js.map": "/TaskApp/static/js/2.860bbd73.chunk.js.map",
   "index.html": "/TaskApp/index.html",
-  "precache-manifest.aab39c251f25b44a5ab1340f04d093e9.js": "/TaskApp/precache-manifest.aab39c251f25b44a5ab1340f04d093e9.js",
+  "precache-manifest.b78fe613713a777cd4701e83f8920c03.js": "/TaskApp/precache-manifest.b78fe613713a777cd4701e83f8920c03.js",
   "service-worker.js": "/TaskApp/service-worker.js",
   "static/css/main.a07cf1bc.chunk.css.map": "/TaskApp/static/css/main.a07cf1bc.chunk.css.map"
 }
