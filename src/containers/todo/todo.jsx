@@ -11,6 +11,24 @@ import Footer from '../../components/footer/footer';
 import './todo.css';
 
 class ToDo extends Component {
+  static propTypes = {
+    changeFilter: PropTypes.func,
+    tasks: PropTypes.array,
+    removeTask: PropTypes.func,
+    filters: PropTypes.string,
+    completeTask: PropTypes.func,
+    addTast: PropTypes.func
+  };
+
+  static defaultProps = {
+    changeFilter: () => {},
+    tasks: [],
+    removeTask: () => {},
+    filters: 'all',
+    completeTask: () => {},
+    addTast: () => {}
+  };
+
   state = {
     taskText: ''
   };
@@ -62,24 +80,6 @@ class ToDo extends Component {
     );
   }
 }
-
-ToDo.propTypes = {
-  changeFilter: PropTypes.func,
-  tasks: PropTypes.array,
-  removeTask: PropTypes.func,
-  filters: PropTypes.string,
-  completeTask: PropTypes.func,
-  addTast: PropTypes.func
-};
-
-ToDo.defaultProps = {
-  changeFilter: () => {},
-  tasks: [],
-  removeTask: () => {},
-  filters: 'all',
-  completeTask: () => {},
-  addTast: () => {}
-};
 
 export default connect(
   ({ tasks, filters }) => ({
