@@ -1,22 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './footer.css';
+import { FILTERS_BTN } from '../../constants/constants';
 
-const FILTERS_BTN = [
-  {
-    text: 'All',
-    id: 'all'
-  },
-  {
-    text: 'Active',
-    id: 'active'
-  },
-  {
-    text: 'Completed',
-    id: 'completed'
-  }
-];
+import './footer.css';
 
 const Footer = ({ amount, activeFilter, changeFilter }) => (
   <div className="footer">
