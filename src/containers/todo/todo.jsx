@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-
 import { addTast, removeTask, completeTask, changeFilter } from '../../actions/actionCreator';
-
 import ToDoInput from '../../components/todo-input/todo-input';
 import ToDoList from '../../components/todo-list/todo-list';
 import Footer from '../../components/footer/footer';
-
 import './todo.css';
 
 class ToDo extends Component {
@@ -74,8 +71,12 @@ class ToDo extends Component {
     return (
       <div className="todo-wrapper">
         <ToDoInput onKeyPress={this.addTast} onChange={this.handleInputChange} value={taskText} />
-        {isTasksExist && <ToDoList completeTask={completeTask} tasksList={filteredTasks} removeTask={removeTask} />}
-        {isTasksExist && <Footer changeFilter={changeFilter} amount={taskCounter} activeFilter={filters} />}
+        {isTasksExist && (
+          <ToDoList completeTask={completeTask} tasksList={filteredTasks} removeTask={removeTask} />
+        )}
+        {isTasksExist && (
+          <Footer changeFilter={changeFilter} amount={taskCounter} activeFilter={filters} />
+        )}
       </div>
     );
   }
