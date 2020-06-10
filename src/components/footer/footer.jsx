@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { FILTERS_BTN } from '../../constants/constants';
-
 import './footer.css';
 
 const Footer = ({ amount, activeFilter, changeFilter }) => (
