@@ -20,7 +20,6 @@
     "plugin:prettier/recommended",
     "plugin:import/errors",
     "plugin:import/warnings"
-
   ],
 
   "env": {
@@ -96,6 +95,7 @@
     "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
     "new-parens": "error",
     "no-array-constructor": "error",
+    "no-console": "error",
     "no-caller": "error",
     "no-class-assign": "error",
     "no-compare-neg-zero": "error",
