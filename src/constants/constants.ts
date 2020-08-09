@@ -6,14 +6,14 @@ export const CHANGE_FILTER = 'CHANGE_FILTER';
 export const FILTERS_BTN = [
   {
     text: 'All',
-    id: 'all'
+    id: 'all',
   },
   {
     text: 'Active',
-    id: 'active'
+    id: 'active',
   },
   {
     text: 'Completed',
-    id: 'completed'
-  }
+    id: 'completed',
+  },
 ];

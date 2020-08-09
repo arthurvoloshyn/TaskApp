@@ -53,13 +53,16 @@
     "block-spacing": ["error", "always"],
     "brace-style": ["error", "1tbs", { "allowSingleLine": true }],
     "camelcase": ["error", { "properties": "never" }],
-    "comma-dangle": ["error", {
-      "arrays": "never",
-      "objects": "never",
-      "imports": "never",
-      "exports": "never",
-      "functions": "never"
-    }],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "imports": "always-multiline",
+        "objects": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "only-multiline"
+      }
+    ],
     "comma-spacing": ["error", { "before": false, "after": true }],
     "comma-style": ["error", "last"],
     "constructor-super": "error",
@@ -95,11 +98,11 @@
     "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
     "new-parens": "error",
     "no-array-constructor": "error",
-    "no-console": "error",
     "no-caller": "error",
     "no-class-assign": "error",
     "no-compare-neg-zero": "error",
     "no-cond-assign": "error",
+    "no-console": "error",
     "no-const-assign": "error",
     "no-constant-condition": ["error", { "checkLoops": false }],
     "no-control-regex": "error",
@@ -169,6 +172,7 @@
     "no-trailing-spaces": "error",
     "no-undef": "error",
     "no-undef-init": "error",
+    "no-underscore-dangle": "error",
     "no-unexpected-multiline": "error",
     "no-unmodified-loop-condition": "error",
     "no-unneeded-ternary": ["error", { "defaultAssignment": false }],
@@ -198,9 +202,9 @@
     "semi-spacing": ["error", { "before": false, "after": true }],
     "space-before-blocks": ["error", "always"],
     "space-before-function-paren": ["error", {
-        "anonymous": "never",
-        "named": "never",
-        "asyncArrow": "always"
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always"
     }],
     "space-in-parens": ["error", "never"],
     "space-infix-ops": "error",

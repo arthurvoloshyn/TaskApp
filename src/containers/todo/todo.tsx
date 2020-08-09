@@ -14,7 +14,7 @@ class ToDo extends Component {
     removeTask: PropTypes.func,
     filters: PropTypes.string,
     completeTask: PropTypes.func,
-    addTask: PropTypes.func
+    addTask: PropTypes.func,
   };
 
   static defaultProps = {
@@ -23,16 +23,16 @@ class ToDo extends Component {
     removeTask: () => {},
     filters: 'all',
     completeTask: () => {},
-    addTask: () => {}
+    addTask: () => {},
   };
 
   state = {
-    taskText: ''
+    taskText: '',
   };
 
   handleInputChange = ({ target: { value } }) => {
     this.setState({
-      taskText: value
+      taskText: value,
     });
   };
 
@@ -43,7 +43,7 @@ class ToDo extends Component {
       const { addTask } = this.props;
       addTask(new Date().getTime(), taskText, false);
       this.setState({
-        taskText: ''
+        taskText: '',
       });
     }
   };
@@ -85,7 +85,7 @@ class ToDo extends Component {
 export default connect(
   ({ tasks, filters }) => ({
     tasks,
-    filters
+    filters,
   }),
-  { addTask, removeTask, completeTask, changeFilter }
+  { addTask, removeTask, completeTask, changeFilter },
 )(ToDo);
