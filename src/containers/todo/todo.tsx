@@ -1,54 +1,45 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+
 import { addTask, removeTask, completeTask, changeFilter } from '../../actions/actionCreator';
 import ToDoInput from '../../components/todo-input/todo-input';
 import ToDoList from '../../components/todo-list/todo-list';
 import Footer from '../../components/footer/footer';
+import { RootState, stateTasks } from '../../types/reducers';
+import { ITask } from '../../types/store';
+import { ToDoProps, ToDoState } from './types';
+
 import './todo.css';
 
-class ToDo extends Component {
-  static propTypes = {
-    changeFilter: PropTypes.func,
-    tasks: PropTypes.array,
-    removeTask: PropTypes.func,
-    filters: PropTypes.string,
-    completeTask: PropTypes.func,
-    addTask: PropTypes.func,
-  };
-
-  static defaultProps = {
-    changeFilter: () => {},
-    tasks: [],
-    removeTask: () => {},
-    filters: 'all',
-    completeTask: () => {},
-    addTask: () => {},
-  };
-
-  state = {
+class ToDo extends Component<ToDoProps, ToDoState> {
+  readonly state = {
     taskText: '',
   };
 
-  handleInputChange = ({ target: { value } }) => {
+  handleInputChange = ({ target: { value } }: React.FocusEvent<HTMLInputElement>): void => {
     this.setState({
       taskText: value,
     });
   };
 
-  addTask = ({ key }) => {
+  addTask = ({ key }: React.KeyboardEvent<HTMLInputElement>): void => {
     const { taskText } = this.state;
 
     if (taskText.length > 3 && key === 'Enter') {
       const { addTask } = this.props;
-      addTask(new Date().getTime(), taskText, false);
+      const task: ITask = {
+        id: new Date().getTime(),
+        text: taskText,
+        isCompleted: false,
+      };
+      addTask(task);
       this.setState({
         taskText: '',
       });
     }
   };
 
-  filterTasks = (tasks, activeFilter) => {
+  filterTasks = (tasks: stateTasks, activeFilter: string): stateTasks => {
     switch (activeFilter) {
       case 'completed':
         return tasks.filter(({ isCompleted }) => isCompleted);
@@ -59,9 +50,10 @@ class ToDo extends Component {
     }
   };
 
-  getActiveTasksCounter = tasks => tasks.filter(({ isCompleted }) => !isCompleted).length;
+  getActiveTasksCounter = (tasks: stateTasks): number =>
+    tasks.filter(({ isCompleted }) => !isCompleted).length;
 
-  render() {
+  public render() {
     const { taskText } = this.state;
     const { tasks, removeTask, completeTask, filters, changeFilter } = this.props;
     const isTasksExist = tasks && tasks.length > 0;
@@ -72,10 +64,14 @@ class ToDo extends Component {
       <div className="todo-wrapper">
         <ToDoInput onKeyPress={this.addTask} onChange={this.handleInputChange} value={taskText} />
         {isTasksExist && (
-          <ToDoList completeTask={completeTask} tasksList={filteredTasks} removeTask={removeTask} />
-        )}
-        {isTasksExist && (
-          <Footer changeFilter={changeFilter} amount={taskCounter} activeFilter={filters} />
+          <>
+            <ToDoList
+              completeTask={completeTask}
+              tasksList={filteredTasks}
+              removeTask={removeTask}
+            />
+            <Footer changeFilter={changeFilter} amount={taskCounter} activeFilter={filters} />
+          </>
         )}
       </div>
     );
@@ -83,7 +79,7 @@ class ToDo extends Component {
 }
 
 export default connect(
-  ({ tasks, filters }) => ({
+  ({ tasks, filters }: RootState) => ({
     tasks,
     filters,
   }),

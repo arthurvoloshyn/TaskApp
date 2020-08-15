@@ -6,11 +6,7 @@ import { ToDoListProps } from './types';
 
 import './todo-list.css';
 
-const ToDoList: React.FC<ToDoListProps> = ({
-  tasksList = [],
-  removeTask = () => {},
-  completeTask = () => {},
-}) => (
+const ToDoList: React.FC<ToDoListProps> = ({ tasksList, removeTask, completeTask }) => (
   <ul className="todo-list">
     {tasksList.map(({ id, text, isCompleted }: ITask) => (
       <ToDoItem
