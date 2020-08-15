@@ -5,6 +5,7 @@ import { addTask, removeTask, completeTask, changeFilter } from '../../actions/a
 import ToDoInput from '../../components/todo-input/todo-input';
 import ToDoList from '../../components/todo-list/todo-list';
 import Footer from '../../components/footer/footer';
+
 import { RootState, stateTasks } from '../../types/reducers';
 import { ITask } from '../../types/store';
 import { ToDoProps, ToDoState } from './types';
@@ -51,14 +52,14 @@ class ToDo extends Component<ToDoProps, ToDoState> {
   };
 
   getActiveTasksCounter = (tasks: stateTasks): number =>
-    tasks.filter(({ isCompleted }) => !isCompleted).length;
+    tasks.filter(({ isCompleted }: ITask) => !isCompleted).length;
 
   public render() {
     const { taskText } = this.state;
     const { tasks, removeTask, completeTask, filters, changeFilter } = this.props;
-    const isTasksExist = tasks && tasks.length > 0;
-    const filteredTasks = this.filterTasks(tasks, filters);
-    const taskCounter = this.getActiveTasksCounter(tasks);
+    const isTasksExist: boolean = tasks && tasks.length > 0;
+    const filteredTasks: stateTasks = this.filterTasks(tasks, filters);
+    const taskCounter: number = this.getActiveTasksCounter(tasks);
 
     return (
       <div className="todo-wrapper">
