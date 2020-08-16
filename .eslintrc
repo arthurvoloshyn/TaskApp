@@ -1,7 +1,8 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
 
   "parserOptions": {
+    "project": "./tsconfig.json",
     "ecmaVersion": 2018,
     "ecmaFeatures": {
       "jsx": true
@@ -11,13 +12,23 @@
 
   "extends": [
     "react-app",
-    "prettier",
     "standard",
+    "prettier",
     "prettier/react",
+    "prettier/@typescript-eslint",
+    "airbnb",
+    "airbnb-typescript",
+    "airbnb-typescript/base",
+    "airbnb/hooks",
     "eslint:recommended",
     "plugin:jest/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:jsx-a11y/strict",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:import/errors",
     "plugin:import/warnings"
   ],
@@ -29,7 +40,14 @@
     "jest": true
   },
 
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
   "plugins": [
+    "jsx-a11y",
     "import",
     "node",
     "promise",
@@ -38,7 +56,8 @@
     "jest",
     "react-hooks",
     "babel",
-    "prettier"
+    "prettier",
+    "@typescript-eslint"
   ],
 
   "globals": {
@@ -163,6 +182,7 @@
     "no-self-assign": "error",
     "no-self-compare": "error",
     "no-sequences": "error",
+    "no-shadow": "off",
     "no-shadow-restricted-names": "error",
     "no-sparse-arrays": "error",
     "no-tabs": "error",
@@ -228,7 +248,9 @@
     "import/no-duplicates": "error",
     "import/no-named-default": "error",
     "import/no-webpack-loader-syntax": "error",
-    "import/no-unresolved": 0,
+    "import/no-cycle": ["error", { "maxDepth": 1 }],
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
 
     "node/no-deprecated-api": "error",
     "node/process-exit-as-throw": "error",
@@ -242,9 +264,53 @@
 
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "react/no-did-mount-set-state": "error",
+    "react/no-direct-mutation-state": "error",
+    "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
+    "react/jsx-no-duplicate-props": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    "react/jsx-fragments": [
+      "error",
+      "syntax"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/state-in-constructor": "off",
+    "react/button-has-type": "off",
+    "react/prop-types": "off",
 
-    "jest/expect-expect": 0,
+    "jest/expect-expect": "off",
 
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+
+    "@typescript-eslint/no-empty-function": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/explicit-member-accessibility": ["error", { "accessibility": "no-public" }],
+    "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/explicit-function-return-type": [
+      "error",
+      {
+        "allowExpressions": true,
+        "allowTypedFunctionExpressions": true
+      }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-use-before-define": [
+      "error",
+      {
+        "functions": true,
+        "classes": true,
+        "variables": false
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/camelcase": "error",
+    "@typescript-eslint/ban-ts-ignore": "error",
+    "@typescript-eslint/interface-name-prefix": ["error", { "prefixWithI": "always" }],
+
+    "jsx-a11y/anchor-is-valid": "error",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off"
   }
 }

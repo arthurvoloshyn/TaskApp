@@ -54,7 +54,7 @@ class ToDo extends Component<ToDoProps, ToDoState> {
   getActiveTasksCounter = (tasks: stateTasks): number =>
     tasks.filter(({ isCompleted }) => !isCompleted).length;
 
-  public render(): React.ReactElement<ToDoProps> {
+  render(): React.ReactElement<ToDoProps> {
     const { taskText } = this.state;
     const { tasks, removeTask, completeTask, filters, changeFilter } = this.props;
     const isTasksExist: boolean = tasks && tasks.length > 0;
