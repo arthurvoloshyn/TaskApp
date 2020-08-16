@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ToDoItem from '../todo-item/todo-item';
+
 import { ITask } from '../../types/store';
 import { ToDoListProps } from './types';
 

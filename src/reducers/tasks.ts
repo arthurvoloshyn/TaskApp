@@ -1,6 +1,7 @@
 import { load } from 'redux-localstorage-simple';
 
-import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from '../constants/constants';
+import { ACTION_TYPES } from '../constants/constants';
+
 import { TaskActionTypes } from '../types/actions';
 import { stateTasks } from '../types/reducers';
 
@@ -8,9 +9,9 @@ const savedTasks: any = load({ namespace: 'todo-list' });
 
 const initialState: stateTasks = savedTasks && savedTasks.tasks ? savedTasks.tasks : [];
 
-const tasks = (state = initialState, action: TaskActionTypes) => {
+const tasks = (state = initialState, action: TaskActionTypes): stateTasks => {
   switch (action.type) {
-    case ADD_TASK:
+    case ACTION_TYPES.ADD_TASK:
       return [
         ...state,
         {
@@ -19,9 +20,9 @@ const tasks = (state = initialState, action: TaskActionTypes) => {
           isCompleted: action.payload.isCompleted,
         },
       ];
-    case REMOVE_TASK:
+    case ACTION_TYPES.REMOVE_TASK:
       return [...state].filter(task => task.id !== action.payload.id);
-    case COMPLETE_TASK:
+    case ACTION_TYPES.COMPLETE_TASK:
       return [...state].map(task =>
         task.id === action.payload.id ? { ...task, isCompleted: !task.isCompleted } : task,
       );

@@ -7,7 +7,7 @@ import ToDoList from '../../components/todo-list/todo-list';
 import Footer from '../../components/footer/footer';
 
 import { RootState, stateTasks } from '../../types/reducers';
-import { ITask } from '../../types/store';
+import { Filter, ITask } from '../../types/store';
 import { ToDoProps, ToDoState } from './types';
 
 import './todo.css';
@@ -40,7 +40,7 @@ class ToDo extends Component<ToDoProps, ToDoState> {
     }
   };
 
-  filterTasks = (tasks: stateTasks, activeFilter: string): stateTasks => {
+  filterTasks = (tasks: stateTasks, activeFilter: Filter): stateTasks => {
     switch (activeFilter) {
       case 'completed':
         return tasks.filter(({ isCompleted }) => isCompleted);
@@ -52,9 +52,9 @@ class ToDo extends Component<ToDoProps, ToDoState> {
   };
 
   getActiveTasksCounter = (tasks: stateTasks): number =>
-    tasks.filter(({ isCompleted }: ITask) => !isCompleted).length;
+    tasks.filter(({ isCompleted }) => !isCompleted).length;
 
-  public render() {
+  public render(): React.ReactElement<ToDoProps> {
     const { taskText } = this.state;
     const { tasks, removeTask, completeTask, filters, changeFilter } = this.props;
     const isTasksExist: boolean = tasks && tasks.length > 0;

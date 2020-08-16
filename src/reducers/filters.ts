@@ -1,6 +1,7 @@
 import { load } from 'redux-localstorage-simple';
 
-import { CHANGE_FILTER } from '../constants/constants';
+import { ACTION_TYPES } from '../constants/constants';
+
 import { FilterActionType } from '../types/actions';
 import { Filter } from '../types/store';
 
@@ -10,7 +11,7 @@ const initialState: Filter = savedFilters && savedFilters.filters ? savedFilters
 
 const filter = (state = initialState, { type, payload }: FilterActionType): Filter => {
   switch (type) {
-    case CHANGE_FILTER:
+    case ACTION_TYPES.CHANGE_FILTER:
       return payload.activeFilter;
     default:
       return state;
