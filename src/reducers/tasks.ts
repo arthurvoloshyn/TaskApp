@@ -5,7 +5,7 @@ import { ACTION_TYPES } from '../constants/constants';
 import { TaskActionTypes } from '../types/actions';
 import { stateTasks } from '../types/reducers';
 
-const savedTasks: any = load({ namespace: 'todo-list' });
+const savedTasks: any = load({ namespace: 'task-app' });
 
 const initialState: stateTasks = savedTasks && savedTasks.tasks ? savedTasks.tasks : [];
 
@@ -21,7 +21,7 @@ const tasks = (state = initialState, action: TaskActionTypes): stateTasks => {
         },
       ];
     case ACTION_TYPES.REMOVE_TASK:
-      return [...state].filter(task => task.id !== action.payload.id);
+      return [...state].filter(({ id }) => id !== action.payload.id);
     case ACTION_TYPES.COMPLETE_TASK:
       return [...state].map(task =>
         task.id === action.payload.id ? { ...task, isCompleted: !task.isCompleted } : task,

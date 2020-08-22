@@ -6,11 +6,19 @@ import ToDoInput from '../../components/todo-input/todo-input';
 import ToDoList from '../../components/todo-list/todo-list';
 import Footer from '../../components/footer/footer';
 
-import { RootState, stateTasks } from '../../types/reducers';
 import { Filter, ITask } from '../../types/store';
+import { RootState, stateTasks } from '../../types/reducers';
 import { ToDoProps, ToDoState } from './types';
 
 import './todo.css';
+
+export const connector = connect(
+  ({ tasks, filters }: RootState) => ({
+    tasks,
+    filters,
+  }),
+  { addTask, removeTask, completeTask, changeFilter },
+);
 
 class ToDo extends Component<ToDoProps, ToDoState> {
   readonly state = {
@@ -63,15 +71,15 @@ class ToDo extends Component<ToDoProps, ToDoState> {
 
     return (
       <div className="todo-wrapper">
-        <ToDoInput onKeyPress={this.addTask} onChange={this.handleInputChange} value={taskText} />
+        <ToDoInput onChange={this.handleInputChange} onKeyPress={this.addTask} value={taskText} />
         {isTasksExist && (
           <>
             <ToDoList
               completeTask={completeTask}
-              tasksList={filteredTasks}
               removeTask={removeTask}
+              tasksList={filteredTasks}
             />
-            <Footer changeFilter={changeFilter} amount={taskCounter} activeFilter={filters} />
+            <Footer activeFilter={filters} amount={taskCounter} changeFilter={changeFilter} />
           </>
         )}
       </div>
@@ -79,10 +87,4 @@ class ToDo extends Component<ToDoProps, ToDoState> {
   }
 }
 
-export default connect(
-  ({ tasks, filters }: RootState) => ({
-    tasks,
-    filters,
-  }),
-  { addTask, removeTask, completeTask, changeFilter },
-)(ToDo);
+export default connector(ToDo);

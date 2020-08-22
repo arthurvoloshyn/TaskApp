@@ -1,15 +1,8 @@
-import { Filter, ITask } from '../../types/store';
-import { FilterActionType, TaskActionTypes } from '../../types/actions';
-import { stateTasks } from '../../types/reducers';
+import { ConnectedProps } from 'react-redux';
 
-export type ToDoProps = {
-  changeFilter: (activeFilter: Filter) => FilterActionType;
-  tasks: stateTasks;
-  removeTask: (id: number) => TaskActionTypes;
-  filters: Filter;
-  completeTask: (id: number) => TaskActionTypes;
-  addTask: (task: ITask) => TaskActionTypes;
-};
+import { connector } from './todo';
+
+export type ToDoProps = ConnectedProps<typeof connector>;
 
 export type ToDoState = {
   taskText: string;

@@ -3,6 +3,7 @@ import { save } from 'redux-localstorage-simple';
 
 import rootReducer from '../reducers';
 
+/* eslint-disable no-underscore-dangle, @typescript-eslint/explicit-function-return-type */
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
   typeof window === 'object' &&
@@ -14,8 +15,9 @@ const configureStore = (preloadedState: any) =>
   createStore(
     rootReducer,
     preloadedState,
-    composeEnhancers(applyMiddleware(save({ namespace: 'todo-list' }))),
+    composeEnhancers(applyMiddleware(save({ namespace: 'task-app' }))),
   );
+/* eslint-enable */
 
 const store = configureStore({});
 

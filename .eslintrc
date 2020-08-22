@@ -5,7 +5,8 @@
     "project": "./tsconfig.json",
     "ecmaVersion": 2018,
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     },
     "sourceType": "module"
   },
@@ -110,12 +111,18 @@
       "ImportDeclaration": 1,
       "flatTernaryExpressions": false,
       "ignoreComments": false
-
     }],
+    "jsx-quotes": "error",
     "key-spacing": ["error", { "beforeColon": false, "afterColon": true }],
     "keyword-spacing": ["error", { "before": true, "after": true }],
+    "max-len": ["error", {
+      "code": 100,
+      "tabWidth": 2,
+      "comments": 100
+    }],
     "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
     "new-parens": "error",
+    "no-alert": "error",
     "no-array-constructor": "error",
     "no-caller": "error",
     "no-class-assign": "error",
@@ -200,14 +207,15 @@
     "no-unsafe-finally": "error",
     "no-unsafe-negation": "error",
     "no-unused-expressions": ["error", { "allowShortCircuit": true, "allowTernary": true, "allowTaggedTemplates": true }],
-    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": true }],
-    "no-use-before-define": ["error", { "functions": false, "classes": false, "variables": false }],
+    "no-unused-vars": "error",
+    "no-use-before-define": ["error", { "functions": false }],
     "no-useless-call": "error",
     "no-useless-computed-key": "error",
     "no-useless-constructor": "error",
     "no-useless-escape": "error",
     "no-useless-rename": "error",
     "no-useless-return": "error",
+    "no-var": "error",
     "no-whitespace-before-property": "error",
     "no-with": "error",
     "object-curly-spacing": ["error", "always"],
@@ -262,6 +270,30 @@
     "standard/no-callback-literal": "error",
     "standard/object-curly-even-spacing": ["error", "either"],
 
+    "react/display-name": ["error", {"ignoreTranspilerName": false }],
+    "react/forbid-prop-types": ["error", {"forbid": ["any"]}],
+    "react/jsx-boolean-value": "error",
+    "react/jsx-closing-bracket-location": "error",
+    "react/jsx-curly-spacing": "error",
+    "react/jsx-indent-props": "error",
+    "react/jsx-key": "error",
+    "react/jsx-max-props-per-line": "error",
+    "react/jsx-no-literals": "off",
+    "react/jsx-no-undef": "error",
+    "react/jsx-pascal-case": "error",
+    "react/jsx-sort-prop-types": "off",
+    "react/jsx-sort-props": "error",
+    "react/no-danger": "error",
+    "react/no-did-update-set-state": "error",
+    "react/no-multi-comp": "error",
+    "react/no-set-state": "off",
+    "react/no-unknown-property": "error",
+    "react/prefer-es6-class": "error",
+    "react/react-in-jsx-scope": "error",
+    "react/require-extension": "off",
+    "react/self-closing-comp": "error",
+    "react/sort-comp": "error",
+    "react/wrap-multilines": "off",
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
     "react/no-did-mount-set-state": "error",
@@ -294,15 +326,8 @@
         "allowTypedFunctionExpressions": true
       }
     ],
-    "@typescript-eslint/no-explicit-any": "error",
-    "@typescript-eslint/no-use-before-define": [
-      "error",
-      {
-        "functions": true,
-        "classes": true,
-        "variables": false
-      }
-    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-use-before-define": ["error", { "functions": false }],
     "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
     "@typescript-eslint/no-non-null-assertion": "error",
     "@typescript-eslint/camelcase": "error",

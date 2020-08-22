@@ -8,15 +8,15 @@ const ToDoInput: React.FC<ToDoInputProps> = ({
   value = '',
   onChange = () => {},
   onKeyPress = () => {},
-}) => (
+}): React.ReactElement<ToDoInputProps> => (
   <div className="todo-input-wrapper">
     <i className="fas fa-plus" />
     <input
       className="todo-input"
-      placeholder="Click to add task"
       onChange={onChange}
-      value={value}
       onKeyPress={onKeyPress}
+      placeholder="Click to add task"
+      value={value}
     />
   </div>
 );

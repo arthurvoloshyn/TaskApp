@@ -5,7 +5,7 @@ import { ACTION_TYPES } from '../constants/constants';
 import { FilterActionType } from '../types/actions';
 import { Filter } from '../types/store';
 
-const savedFilters: any = load({ namespace: 'todo-list' });
+const savedFilters: any = load({ namespace: 'task-app' });
 
 const initialState: Filter = savedFilters && savedFilters.filters ? savedFilters.filters : 'all';
 

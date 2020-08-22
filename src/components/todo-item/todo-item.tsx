@@ -10,18 +10,23 @@ const ToDoItem: React.FC<ToDoItemProps> = ({
   removeTask = () => {},
   id = 0,
   completeTask = () => {},
-}) => {
-  const handleCompleteTask = () => completeTask(id);
-  const handleRemoveTask = () => removeTask(id);
+}): React.ReactElement<ToDoItemProps> => {
+  const handleCompleteTask = (): void => {
+    completeTask(id);
+  };
+
+  const handleRemoveTask = (): void => {
+    removeTask(id);
+  };
 
   return (
     <li className="todo-item">
       <i
-        onClick={handleCompleteTask}
         className={isCompleted ? 'mark far fa-check-circle' : 'mark far fa-circle'}
+        onClick={handleCompleteTask}
       />
       <span className={isCompleted ? 'completed text' : 'text'}>{text}</span>
-      <i onClick={handleRemoveTask} className="fas fa-times" />
+      <i className="fas fa-times" onClick={handleRemoveTask} />
     </li>
   );
 };
