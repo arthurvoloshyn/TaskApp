@@ -120,6 +120,7 @@
       "tabWidth": 2,
       "comments": 100
     }],
+    "multiline-comment-style": ["error", "separate-lines"],
     "new-cap": ["error", { "newIsCap": true, "capIsNew": false }],
     "new-parens": "error",
     "no-alert": "error",
