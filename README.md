@@ -19,7 +19,7 @@ Simple React Task Application
 - You'll need to have [git](https://git-scm.com/) and [node](https://nodejs.org/en/) installed in
   your system.
 
-`https://github.com/ArturW1998/TaskApp.git`
+`git clone https://github.com/ArturW1998/TaskApp.git`
 
 - Then install the dependencies:
 
@@ -32,7 +32,7 @@ Simple React Task Application
 
 `npm start`
 
-Open the web browser to `http://localhost:5000/`
+Open the web browser to `http://localhost:3000/`
 
 ### To build the production package
 
