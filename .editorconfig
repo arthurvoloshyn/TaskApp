@@ -9,7 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 max_line_length = 100
 
-[*.{js,jsx,html,css}]
+[*.{ts,tsx,html,css}]
 charset = utf-8
 indent_style = space
 indent_size = 2
