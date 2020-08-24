@@ -64,8 +64,8 @@ class ToDo extends Component<ToDoProps, ToDoState> {
 
   render(): React.ReactElement<ToDoProps> {
     const { taskText } = this.state;
-    const { tasks, removeTask, completeTask, filters, changeFilter } = this.props;
-    const isTasksExist: boolean = tasks && tasks.length > 0;
+    const { tasks = [], removeTask, completeTask, filters, changeFilter } = this.props;
+    const isTasksExist: boolean = tasks.length > 0;
     const filteredTasks: stateTasks = this.filterTasks(tasks, filters);
     const taskCounter: number = this.getActiveTasksCounter(tasks);
 
