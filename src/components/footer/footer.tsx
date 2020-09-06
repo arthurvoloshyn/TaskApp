@@ -12,7 +12,7 @@ const Footer: React.FC<FooterProps> = ({
   activeFilter = 'all',
   changeFilter = () => {},
 }): React.ReactElement<FooterProps> => (
-  <div className="footer">
+  <footer className="footer">
     <span className="amount">{`${amount} Tasks left`}</span>
     <div className="btn-group">
       {FILTERS_BTN.map(({ text, id }: FilterBtn) => {
@@ -31,7 +31,7 @@ const Footer: React.FC<FooterProps> = ({
         );
       })}
     </div>
-  </div>
+  </footer>
 );
 
 export default Footer;
