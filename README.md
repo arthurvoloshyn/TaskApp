@@ -9,10 +9,6 @@ Simple React Task Application
 - react ^16.x
 - typescript 3.x
 - redux 4.x
-- redux-localstorage-simple 2.x
-- gh-pages 3.x
-- husky 3.x
-- lint-staged 9.x
 
 ### To install
 
