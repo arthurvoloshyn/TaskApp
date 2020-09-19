@@ -17,7 +17,12 @@ export const connector = connect(
     tasks,
     filters,
   }),
-  { addTask, removeTask, completeTask, changeFilter },
+  {
+    addTask,
+    removeTask,
+    completeTask,
+    changeFilter,
+  },
 );
 
 class ToDo extends Component<ToDoProps, ToDoState> {
