@@ -7,7 +7,7 @@ import { stateTasks } from '../types/reducers';
 
 const savedTasks: any = load({ namespace: 'task-app' });
 
-const initialState: stateTasks = savedTasks && savedTasks.tasks ? savedTasks.tasks : [];
+const initialState: stateTasks = savedTasks?.tasks || [];
 
 const tasks = (state = initialState, action: TaskActionTypes): stateTasks => {
   switch (action.type) {
