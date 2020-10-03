@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { FILTERS_BTN } from '../../constants/constants';
 
@@ -20,12 +21,10 @@ const Footer: React.FC<FooterProps> = ({
           changeFilter(id);
         };
 
+        const classes = classNames('filter-btn', { active: id === activeFilter });
+
         return (
-          <button
-            key={id}
-            className={id === activeFilter ? 'filter-btn active' : 'filter-btn'}
-            onClick={handleChangeFilter}
-          >
+          <button key={id} className={classes} onClick={handleChangeFilter}>
             {text}
           </button>
         );

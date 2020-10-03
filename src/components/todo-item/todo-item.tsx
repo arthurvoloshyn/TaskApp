@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import { ToDoItemProps } from './types';
 
@@ -19,13 +20,18 @@ const ToDoItem: React.FC<ToDoItemProps> = ({
     removeTask(id);
   };
 
+  const markClasses = classNames(
+    'mark far',
+    { 'fa-check-circle': isCompleted },
+    { 'fa-circle': !isCompleted },
+  );
+
+  const textClasses = classNames('text', { completed: isCompleted });
+
   return (
     <li className="todo-item">
-      <i
-        className={isCompleted ? 'mark far fa-check-circle' : 'mark far fa-circle'}
-        onClick={handleCompleteTask}
-      />
-      <span className={isCompleted ? 'completed text' : 'text'}>{text}</span>
+      <i className={markClasses} onClick={handleCompleteTask} />
+      <span className={textClasses}>{text}</span>
       <i className="fas fa-times" onClick={handleRemoveTask} />
     </li>
   );
