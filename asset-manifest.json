@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/TaskApp/static/css/main.4da8bbab.chunk.css",
-    "main.js": "/TaskApp/static/js/main.a3bfd890.chunk.js",
-    "main.js.map": "/TaskApp/static/js/main.a3bfd890.chunk.js.map",
+    "main.js": "/TaskApp/static/js/main.01e8d3a3.chunk.js",
+    "main.js.map": "/TaskApp/static/js/main.01e8d3a3.chunk.js.map",
     "runtime-main.js": "/TaskApp/static/js/runtime-main.53c00261.js",
     "runtime-main.js.map": "/TaskApp/static/js/runtime-main.53c00261.js.map",
     "static/js/2.f847c4b6.chunk.js": "/TaskApp/static/js/2.f847c4b6.chunk.js",
     "static/js/2.f847c4b6.chunk.js.map": "/TaskApp/static/js/2.f847c4b6.chunk.js.map",
     "index.html": "/TaskApp/index.html",
-    "precache-manifest.57189b40c432574f3e388fd75fe70fe5.js": "/TaskApp/precache-manifest.57189b40c432574f3e388fd75fe70fe5.js",
+    "precache-manifest.be63a162548e819657d5f1a22f7d7e45.js": "/TaskApp/precache-manifest.be63a162548e819657d5f1a22f7d7e45.js",
     "service-worker.js": "/TaskApp/service-worker.js",
     "static/css/main.4da8bbab.chunk.css.map": "/TaskApp/static/css/main.4da8bbab.chunk.css.map",
     "static/js/2.f847c4b6.chunk.js.LICENSE.txt": "/TaskApp/static/js/2.f847c4b6.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.53c00261.js",
     "static/js/2.f847c4b6.chunk.js",
     "static/css/main.4da8bbab.chunk.css",
-    "static/js/main.a3bfd890.chunk.js"
+    "static/js/main.01e8d3a3.chunk.js"
   ]
 }
