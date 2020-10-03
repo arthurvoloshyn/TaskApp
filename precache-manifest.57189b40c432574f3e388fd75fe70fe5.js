@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5bd88a092d47167b562266910d405bb0",
+    "revision": "a0fe171e3dd9f7c91b98d5ecb0efed72",
     "url": "/TaskApp/index.html"
   },
   {
-    "revision": "f4930139c1ce03c1da01",
+    "revision": "c9e17c35baf61f3341d4",
     "url": "/TaskApp/static/css/main.4da8bbab.chunk.css"
   },
   {
-    "revision": "6d0eac49ffa84450716f",
-    "url": "/TaskApp/static/js/2.9b35b938.chunk.js"
+    "revision": "73eb26b33c1d7e75a6d1",
+    "url": "/TaskApp/static/js/2.f847c4b6.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/TaskApp/static/js/2.9b35b938.chunk.js.LICENSE.txt"
+    "url": "/TaskApp/static/js/2.f847c4b6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f4930139c1ce03c1da01",
-    "url": "/TaskApp/static/js/main.4e9820ff.chunk.js"
+    "revision": "c9e17c35baf61f3341d4",
+    "url": "/TaskApp/static/js/main.a3bfd890.chunk.js"
   },
   {
     "revision": "382c39984af16bc30b19",
