@@ -3,13 +3,14 @@ import { save } from 'redux-localstorage-simple';
 
 import rootReducer from '../reducers';
 
+const { NODE_ENV } = process.env;
+
 /* eslint-disable no-underscore-dangle, @typescript-eslint/explicit-function-return-type */
 const composeEnhancers =
-  process.env.NODE_ENV !== 'production' &&
-  typeof window === 'object' &&
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
-    ? (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
-    : compose;
+  (NODE_ENV !== 'production' &&
+    typeof window === 'object' &&
+    (window as any)?.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__?.({})) ||
+  compose;
 
 const configureStore = (preloadedState: any) =>
   createStore(
