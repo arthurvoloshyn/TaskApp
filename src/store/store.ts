@@ -1,4 +1,4 @@
-import { createStore, compose, applyMiddleware } from 'redux';
+import { applyMiddleware, compose, createStore } from 'redux';
 import { save } from 'redux-localstorage-simple';
 
 import rootReducer from '../reducers';

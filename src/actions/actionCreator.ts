@@ -1,7 +1,7 @@
 import { ACTION_TYPES } from '../constants/constants';
 
-import { TaskActionTypes, FilterActionType } from '../types/actions';
-import { ITask, Filter } from '../types/store';
+import { FilterActionType, TaskActionTypes } from '../types/actions';
+import { Filter, ITask } from '../types/store';
 
 export const addTask = (task: ITask): TaskActionTypes => ({
   type: ACTION_TYPES.ADD_TASK,

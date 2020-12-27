@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { addTask, removeTask, completeTask, changeFilter } from '../../actions/actionCreator';
+import { addTask, changeFilter, completeTask, removeTask } from '../../actions/actionCreator';
 import ToDoInput from '../../components/todo-input/todo-input';
 import ToDoList from '../../components/todo-list/todo-list';
 import Footer from '../../components/footer/footer';

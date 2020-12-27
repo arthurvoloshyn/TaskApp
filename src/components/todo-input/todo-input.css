@@ -26,12 +26,15 @@
 .todo-input::-webkit-input-placeholder {
   font-family: 'Indie Flower', cursive;
 }
+
 .todo-input::-moz-placeholder {
   font-family: 'Indie Flower', cursive;
 }
+
 .todo-input:-moz-placeholder {
   font-family: 'Indie Flower', cursive;
 }
+
 .todo-input:-ms-input-placeholder {
   font-family: 'Indie Flower', cursive;
 }
